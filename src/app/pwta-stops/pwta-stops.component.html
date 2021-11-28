@@ -1,0 +1,14 @@
+<p>pwta-stops works!</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>NAME</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of pwtaStops">
+      <td>{{record.attributes.name}}</td>
+    </tr>
+  </tbody>
+</table>
