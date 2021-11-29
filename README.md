@@ -41,17 +41,16 @@ I am not very familiar with writing unit tests in Jasmine. That said, I felt I s
 ## Running the application
 Rather than provide extensive instructions on how to configure an environment to support an Angular application, I opted to create a Docker container, which will allow any user to run the application without the need of cluttering their machines up with libraries they may not want.
 
-### To run the Docker container, please go to:
+* To run the Docker container, you'll need to get the docker desktop. You can download it using the link below
 
-https://labs.play-with-docker.com/
+https://www.docker.com/get-started
 
-1. Click the Login button and select docker
-  * You will need to create a Docker account if you don't already have one.
-2. Click the Start button
-![Start Button](/src/assets/images/readme/docker_start.png)
-3. After you've logged in and started, you'll need to "add a new instance"
-![Add New Instance](/src/assets/images/readme/add_instance.png)
-3. In the terminal window, issue the following command: docker run -d -p 8080:80 richwjohnson/pwta-client
-![Docker Run Command](/src/assets/images/readme/docker_run.png)
-4. open a broswer and navigate to http://localhost:8080/. You should see the PaymentWorks Transit Authority Application!
+* After you install the desktop, you should see the following screen:
+
+![Docker Desktop](/src/assets/images/readme/docker_desktop.png)
+
+* From a terminal window, execute the following command to download and run the pwts-client image
+**docker run -d -p 8080:80 richwjohnson/pwta-client**
+
+* Open a broswer and navigate to http://localhost:8080/. You should see the PaymentWorks Transit Authority Application!
 ![Application](/src/assets/images/readme/pwta-client.png)
