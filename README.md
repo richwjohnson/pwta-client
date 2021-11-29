@@ -32,7 +32,9 @@
 * pwta-stops: This component is responsible for fetching and rendering MBTA stop information
 
 ## Interfaces
+* ipwta-route-api-resource: Responsible for defining the structure of the response received from the REST API call
 * ipwta-route: Responsible for defining the object structure used to contain route information
+* ipwta-stop-api-resource: Responsible for defining the structure of the response received from the REST API call
 * ipwta-stop: Responsible for defining the object structure used to contain stop information
 
 ## A note about unit tests
