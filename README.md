@@ -48,10 +48,10 @@ https://labs.play-with-docker.com/
 1. Click the Login button and select docker
   * You will need to create a Docker account if you don't already have one.
 2. Click the Start button
-![Start Button](/assets/images/readme/docker_start.png)
+![Start Button](/src/assets/images/readme/docker_start.png)
 3. After you've logged in and started, you'll need to "add a new instance"
-![Add New Instance](/assets/images/readme/add_instance.png)
+![Add New Instance](/src/assets/images/readme/add_instance.png)
 3. In the terminal window, issue the following command: docker run -d -p 8080:80 richwjohnson/pwta-client
-![Docker Run Command](/assets/images/readme/docker_run.png)
+![Docker Run Command](/src/assets/images/readme/docker_run.png)
 4. open a broswer and navigate to http://localhost:8080/. You should see the PaymentWorks Transit Authority Application!
-![Application](/assets/images/readme/pwta-client.png)
+![Application](/src/assets/images/readme/pwta-client.png)
