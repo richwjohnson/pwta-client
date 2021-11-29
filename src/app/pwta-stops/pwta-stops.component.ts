@@ -10,8 +10,10 @@ import { PwtaStopsService } from "./pwta-stops.service";
   styleUrls: ['./pwta-stops.component.css']
 })
 export class PwtaStopsComponent implements OnInit {
+  // pwtaStops is an array that will store a list of pwtaStop objects.
   public pwtaStops: Array<IpwtaStop>;
-  public routename = '';
+  // route is an input parameter that's received from the calling component (pwta-routes.component.html)
+  // it contains the selected route object
   @Input('route') route: IpwtaRoute;
 
   constructor(private pwtaStopsService: PwtaStopsService) {
@@ -19,22 +21,18 @@ export class PwtaStopsComponent implements OnInit {
     this.route = {id: '', attributes: {color: '', long_name: ''}};
   }
 
-  ngOnInit(): void {
-    // console.log("selected route", this.selectedRoute);
-    // if (this.selectedRoute) {
-    //   this.getPwtaStops(this.selectedRoute);
-    // }
-  }
+  ngOnInit(): void { }
 
+  // If a change is detected on the route parameter, update our component and fetch the appropriate route information
   ngOnChanges(changes: SimpleChanges) {
     this.route = changes.route.currentValue;
     this.getPwtaStops(this.route.id);
   }
 
+  // Use the Stops service to make an asynchronous call to fetch a list of stops for a given route
   getPwtaStops(routeId: string): void {
     if (this.route.id.length > 0) {
       this.pwtaStopsService.getStops(routeId).subscribe(results => {
-        console.log(results.data);
         this.pwtaStops = results.data;
       });
     }

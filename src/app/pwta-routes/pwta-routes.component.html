@@ -1,6 +1,7 @@
 <div>
   <h3>Select a route for a list of stops</h3>
 
+  <!-- Display an error message if we have one -->
   <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
     {{errorMessage}}
   </div>
@@ -20,5 +21,7 @@
     </tbody>
   </table>
 
-  <app-pwta-stops [route]="route"></app-pwta-stops>
+  <!-- Display the stops for the selected route -->
+  <app-pwta-stops [route]="selectedRoute"></app-pwta-stops>
+
 </div>
