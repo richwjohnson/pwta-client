@@ -36,7 +36,22 @@
 * ipwta-stop: Responsible for defining the object structure used to contain stop information
 
 ## A note about unit tests
-To acknowledge the importance of unit tests, a few basic tests were written to support the route and stop service classes. I am not very familiar with writing unit tests in Jasmine and felt that time would be better spent focusing on additional portions of the application.
+I am not very familiar with writing unit tests in Jasmine. That said, I felt I should acknowledge their importance. I wrote a few basic tests to support the services that are used for fetching route and stop information from the REST API. These tests can be found in pwta-routes.service.spec.ts and pwta-stops.service.spec.ts
 
 ## Running the application
 Rather than provide extensive instructions on how to configure an environment to support an Angular application, I opted to create a Docker container, which will allow any user to run the application without the need of cluttering their machines up with libraries they may not want.
+
+### To run the Docker container, please go to:
+
+https://labs.play-with-docker.com/
+
+1. Click the Login button and select docker
+  * You will need to create a Docker account if you don't already have one.
+2. Click the Start button
+!(/assets/images/readme/docker_start.png)
+3. After you've logged in and started, you'll need to "add a new instance"
+!(/assets/images/readme/add_instance.png)
+3. In the terminal window, issue the following command: docker run -d -p 8080:80 richwjohnson/pwta-client
+!(/assets/images/readme/docker_run.png)
+4. open a broswer and navigate to http://localhost:8080/. You should see the PaymentWorks Transit Authority Application!
+!(/assets/images/readme/pwta-client.png)
