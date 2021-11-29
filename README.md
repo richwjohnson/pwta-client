@@ -38,6 +38,3 @@
 
 ## A note about unit tests
 To acknowledge the importance of unit tests, a few basic tests were written to support the route and stop service classes. I am not very familiar with writing unit tests in Jasmine and felt that time would be better spent focusing on additional portions of the application.
- 
-TODO - Error handling?
-CACHING
