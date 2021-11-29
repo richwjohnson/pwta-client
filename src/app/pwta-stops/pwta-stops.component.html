@@ -1,14 +1,15 @@
-<p>pwta-stops works!</p>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>NAME</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let record of pwtaStops">
-      <td>{{record.attributes.name}}</td>
-    </tr>
-  </tbody>
-</table>
+<div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th colspan=2 *ngIf="route.id.length>0">{{route.attributes.long_name}} Stops</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of pwtaStops">
+        <td class="station" [style.background-color]="'#'+route.attributes.color">&bull;</td>
+        <td>{{record.attributes.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

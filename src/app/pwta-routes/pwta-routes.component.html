@@ -1,21 +1,24 @@
-<h3>Select a route for a list of stops</h3>
+<div>
+  <h3>Select a route for a list of stops</h3>
 
-<div *ngIf="errorMessage" class="alert alert-danger" role="alert">
-  {{errorMessage}}
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{errorMessage}}
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Route ID</th>
+        <th>Route Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let route of pwtaRoutes" (click)="setSelectedRoute(route)">
+        <td>{{route.id}}</td>
+        <td>{{route.attributes.long_name}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-pwta-stops [route]="route"></app-pwta-stops>
 </div>
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>ROUTE ID</th>
-      <th>ROUTE NAME</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let record of pwtaRoutes" routerLink="../stops/{{record.id}}">
-      <td>{{record.id}}</td>
-      <td>{{record.attributes.long_name}}</td>
-      <td>{{record.attributes.color}}</td>
-    </tr>
-  </tbody>
-</table>

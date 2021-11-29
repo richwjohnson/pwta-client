@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IpwtaStop } from "../pwta-stops/interfaces/ipwta-stop";
 import { IpwtaRoute } from "./interfaces/ipwta-route";
 import { PwtaRoutesService } from "./pwta-routes.service";
 
@@ -10,13 +11,15 @@ import { PwtaRoutesService } from "./pwta-routes.service";
 })
 export class PwtaRoutesComponent implements OnInit {
 
-  // taRoutes is an array that will store a list of taRoute objects.
+  // pwtaRoutes is an array that will store a list of pwtaRoute objects.
   public pwtaRoutes: Array<IpwtaRoute>;
   public errorMessage: string;
+  public route: IpwtaRoute;
 
   constructor(private pwtaRoutesService: PwtaRoutesService) {
     this.pwtaRoutes = [];
     this.errorMessage = "";
+    this.route = {id: '', attributes: {color: '', long_name: ''}};
   }
 
   ngOnInit(): void {
@@ -31,6 +34,11 @@ export class PwtaRoutesComponent implements OnInit {
     }, error => {
       this.errorMessage = error.message;
     });
+  }
+
+  setSelectedRoute(route: IpwtaRoute) {
+    console.log(route);
+    this.route = route;
   }
 
 }

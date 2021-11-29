@@ -5,7 +5,6 @@ import { PwtaStopsComponent } from "./pwta-stops/pwta-stops.component";
 
 const routes: Routes = [
   { path: 'routes', component: PwtaRoutesComponent },
-  { path: 'stops', component: PwtaStopsComponent },
   { path: 'stops/:id', component: PwtaStopsComponent }
 ];
 
