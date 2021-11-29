@@ -10,7 +10,6 @@
 
 ## Design Decisions
 * The API data used to support this application is reliably static and small in size. It could be argued to preload all of the data for this application and cache it, without the need to make repeated calls to the REST API. I opted to make an API call for each request to fetch stop information. This approach will demonstrate how Angular is able make an asynchronous call and update the component appropriately when a response is received.
-* Rather than provide extensive instructions on how to configure an environment to support an Angular application, I opted to create a Docker container, which will allow any user to run the application without the need of cluttering their machines up with libraries they may not want.
 
 ## Angular Project File Naming Conventions
 * app.component.ts - TypeScript file that defines the primary application component
@@ -38,3 +37,6 @@
 
 ## A note about unit tests
 To acknowledge the importance of unit tests, a few basic tests were written to support the route and stop service classes. I am not very familiar with writing unit tests in Jasmine and felt that time would be better spent focusing on additional portions of the application.
+
+## Running the application
+Rather than provide extensive instructions on how to configure an environment to support an Angular application, I opted to create a Docker container, which will allow any user to run the application without the need of cluttering their machines up with libraries they may not want.
