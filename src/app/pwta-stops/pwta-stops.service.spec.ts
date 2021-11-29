@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { defer } from "rxjs";
-import { IpwtaStop } from "./interfaces/ipwta-stop";
+import { IpwtaStopApiResponse } from "./interfaces/ipwta-stop-api-response";
 
 import { PwtaStopsService } from './pwta-stops.service';
 
@@ -14,8 +14,8 @@ describe('PwtaStopsService', () => {
   });
 
   it('should return expected routes (HttpClient called once)', (done: DoneFn) => {
-    const expectedRoutes: IpwtaStop[] =
-      [{ id: 'place-brntn', attributes: {name: 'Braintree'}}, { id: 'place-qamnl', attributes: {name: 'Quincy Adams'}}];
+    const expectedRoutes: IpwtaStopApiResponse =
+      {data: [{ id: 'place-brntn', attributes: {name: 'Braintree'}}, { id: 'place-qamnl', attributes: {name: 'Quincy Adams'}}]};
 
     httpClientSpy.get.and.returnValue(asyncData(expectedRoutes));
 

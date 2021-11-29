@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { defer } from "rxjs";
 import { IpwtaRoute } from "./interfaces/ipwta-route";
+import { IpwtaRouteApiResponse } from "./interfaces/ipwta-route-api-response";
 
 import { PwtaRoutesService } from './pwta-routes.service';
 
@@ -14,8 +15,8 @@ describe('PwtaRoutesService', () => {
   });
 
   it('should return expected routes (HttpClient called once)', (done: DoneFn) => {
-    const expectedRoutes: IpwtaRoute[] =
-      [{ id: 'Red', attributes: {color:'DA291C', long_name: 'Red Line'}}, { id: 'Orange', attributes: {color: "ED8B00", long_name: 'Orange Line'}}];
+    const expectedRoutes: IpwtaRouteApiResponse =
+      {data: [{ id: 'Red', attributes: {color:'DA291C', long_name: 'Red Line'}}, { id: 'Orange', attributes: {color: "ED8B00", long_name: 'Orange Line'}}]};
 
     httpClientSpy.get.and.returnValue(asyncData(expectedRoutes));
 
